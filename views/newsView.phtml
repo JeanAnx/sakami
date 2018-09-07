@@ -1,0 +1,38 @@
+<h1>Les news</h1>
+
+<main class="container">
+
+	<section class="newsFeed">
+
+		<?php foreach ($articles as $theArticle): ?>
+		
+			<article class="articleNews">
+
+				<a href="?page=article?id=<?= $theArticle['id'] ?>">
+				<h2><?= $theArticle['title']; ?></h2>
+
+				<img src="<?= $theArticle['picture'] ?>"/>
+
+				<h3><?= $theArticle['subtitle'] ?></h3>
+				<p>Par <?= $theArticle['author'] ?>, créé le <?= $theArticle['created_at'] ?></p>
+
+				</a>
+
+			</article>
+
+
+
+		<?php endforeach; ?>
+
+	
+	</section>
+
+
+<?php 
+
+
+var_dump($articles); ?>
+
+</main>
+
+</body>

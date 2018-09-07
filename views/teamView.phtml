@@ -1,0 +1,36 @@
+
+	<main class="container">
+
+		<h1>L'équipe</h1>
+
+		<section class="sectionEffectif">
+
+			<?php foreach ($players as $player): ?>
+
+				<div class="playerCard"> 
+
+					<a href="player.php?id=<?= $player['id'] ?>"><img class="playerPicture" src="<?= $player['picture']; ?>" alt="joueur" >
+					
+					<h3><?= $player['firstname'].' '.$player['lastname']; ?></h3>
+
+
+					<p><?= $player['position'] ?></p>
+
+					</a>
+
+
+				</div>
+
+
+			<?php endforeach; ?>
+
+		</section>
+
+
+
+
+	</main>
+
+</body>
+
+
