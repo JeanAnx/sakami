@@ -1,0 +1,35 @@
+
+	<main class="container">
+
+		<div id="onePlayerCard">
+
+			<h1><?= $thePlayer['firstname'] . " " . $thePlayer['lastname']?></h1>
+		
+			<img src="<?= $thePlayer['picture'] ?>">
+
+			<div id="rightBlock">
+				
+				<p class="playerInfos"><?= $thePlayer['position']?>
+				</p>
+				
+				<p class="playerInfos"><?= $thePlayer['hand']?>
+				</p>
+
+				<p class="playerInfos"><?= $thePlayer['height'] ?> m
+				</p>
+
+				<p class="playerInfos"><?= $thePlayer['weight'] ?> kgs
+				</p>
+
+				<p class="playerInfos"><?= $thePlayer['birthday'] ?></p>
+
+
+			</div>
+
+
+		</div>
+
+	</main>
+
+
+</body>

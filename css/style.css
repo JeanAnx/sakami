@@ -1,6 +1,7 @@
 /*
 Rouge : #CC3333
 Bleu : #3300CC
+Bleu foncé : #000080;
 */
 
 html {
@@ -8,7 +9,7 @@ html {
 }
 
 *:hover {
-	transition: all .2s ease 0s;
+	transition: all .3s ease 0s;
 }
 
 body {
@@ -18,12 +19,19 @@ body {
 h1 , h2 , h3 {
 	font-family: Open Sans, sans-serif;
 	text-align: center;
+	color: #CC3333;
+}
+
+h1 {
+	font-size: 3rem;
 }
 
 h2 {
+	font-size: 2rem;
+}
 
-
-
+h3 {
+	font-size: 1.5rem;
 }
 
 a {
@@ -37,7 +45,7 @@ header {
 }
 
 .container {
-	max-width: 1500px;
+	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -59,7 +67,6 @@ header h1.titreLogo {
 
 	font-family: 'Sedgwick Ave', cursive;
 	color:  #CC3333;
-	font-size: 3rem;
 	margin: 0;
 
 
@@ -67,7 +74,7 @@ header h1.titreLogo {
 
 nav.menuNav {
 /*	background-color: #000080;
-*/	padding: 0 20% 2% 20%;
+*/	padding: 0 20% 10px 20%;
 	display: flex;
 	justify-content: space-around;
 	flex-flow: row wrap;
@@ -164,7 +171,17 @@ div.flexslider {
 }
 
 
-/******** PAGE EQUIPE ********/
+/******** PAGE EQUIPE ******************************/
+
+#titleTeam {
+	text-align: center;
+}
+
+.fa-users {
+	color: #CC3333;
+	font-size: 4rem;
+	text-align: center;
+}
 
 section.sectionEffectif {
 	display: flex;
@@ -174,14 +191,35 @@ section.sectionEffectif {
 }
 
 .playerCard {
-	width: 500px;
+	width: 300px;
 	text-align: center;
+	border: 2px solid #CC3333; 
+	border-radius: 10px;
+	margin: 10px;
+	box-shadow: 2px 2px 2px grey;
+}
+
+.playerCard:hover {
+	background-color: rgba(0,0,0,0.05);
+	transform: scale(1.05);
 }
 
 .playerCard img {
 
 	width: 250px;
-	margin: 0 auto;
+	margin: 10px auto 0 auto;
+}
+
+.h2Player {
+	color: white;
+	font-size: 2.5rem;
+}
+
+.h3Player {
+	color: white;
+	margin-top: 0;
+	margin-bottom: 30px;	
+	font-size: 2rem;
 
 }
 .playerCard a {
@@ -193,19 +231,49 @@ section.sectionEffectif {
 
 }
 
-/*********** PAGE NEWS ****************/
+.playerCardBottom {
+	background-color: #CC3333;
+}
+
+/*********** PAGE PLAYER ****************************/
+
+#onePlayerCard {
+	margin: 10px auto;
+	width: 400px;
+}
+
+#onePlayerCard img {
+	width: 250px;
+}
+
+#onePlayerCard #rightBlock {
+	margin: 10px;
+	float: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+.playerInfos {
+	margin: 15px 0;
+	color: black;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+
+/*********** PAGE NEWS ****************************/
 
 .newsFeed {
 	display: flex;
 	flex-flow: row wrap;
-
 	justify-content: center;
-
 }
 
 .articleNews h2 {
-	font-size: 2rem;
 	height: 50px;
+	color: black;
 }
 
 .articleNews img , .articleNews {

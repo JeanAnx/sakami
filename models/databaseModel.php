@@ -2,11 +2,12 @@
 
 class dataBase {
 
-	public function openDatabase() {
+
+	private function openDatabase() {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass);
+		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$db->exec('SET NAMES UTF8');
 
 	}
@@ -15,7 +16,7 @@ class dataBase {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass);
+		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$db->exec('SET NAMES UTF8');
 
 		$sql = "SELECT * FROM players";
@@ -32,6 +33,25 @@ class dataBase {
 
 	}
 
+	public function getPlayerById($playerId) {
+
+		$user = 'root';
+		$pass = 'm12gi8gefxJWJRGs';
+		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$db->exec('SET NAMES UTF8');
+
+		$sql = "SELECT * FROM players WHERE `id` = '$playerId'";
+
+		$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+
+		foreach ($statement as $row) {
+			$thePlayer = $row;
+		}
+
+		return $thePlayer;
+
+	}
+
 	public function getArticles() {
 
 		$user = 'root';
@@ -39,7 +59,7 @@ class dataBase {
 		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass);
 		$db->exec('SET NAMES UTF8');
 
-		$sql = "SELECT * FROM articles";
+		$sql = "SELECT * FROM articles ORDER BY `created_at` DESC";
 
 		$statement = $db->query($sql, \PDO::FETCH_ASSOC);
 

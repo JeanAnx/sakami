@@ -1,25 +1,31 @@
 
 	<main class="container">
 
-		<h1>L'équipe</h1>
+		<div id="titleTeam">
+			<h1>- L'équipe -</h1>
+		</div>
 
 		<section class="sectionEffectif">
 
 			<?php foreach ($players as $player): ?>
 
-				<div class="playerCard"> 
+				<article class="playerCard"> 
 
-					<a href="player.php?id=<?= $player['id'] ?>"><img class="playerPicture" src="<?= $player['picture']; ?>" alt="joueur" >
+					<a href="?page=player&id=<?= $player['id'] ?>"><img class="playerPicture" src="<?= $player['picture']; ?>" alt="joueur" >
 					
-					<h3><?= $player['firstname'].' '.$player['lastname']; ?></h3>
+						<div class="playerCardBottom">
 
+							<h2 class="h2Player"><?= $player['firstname'].' '.$player['lastname']; ?></h2>
 
-					<p><?= $player['position'] ?></p>
+							<h3 class="h3Player"><?= $player['position'] ?></h3>
+
+					
+						</div>
 
 					</a>
 
 
-				</div>
+				</article>
 
 
 			<?php endforeach; ?>
