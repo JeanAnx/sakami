@@ -1,0 +1,152 @@
+<main>
+
+	<div class="login">
+
+		<h2>Déjà membre ? Connectez-vous :</h2>
+
+		<form action="../services/login.php" method="post" id="seconnecter">
+			<input type="txt" name="email" placeholder="E-mail ou Pseudo">
+			<input type="password" name="password" placeholder="Mot de passe">
+			<button type="submit">Se connecter</button>
+
+		</form>
+
+
+	</div>
+
+	
+		
+		
+		<form class="signin" action="submit.php" method="post" onsubmit="return checkForm()">
+
+			<h2>Pas encore de compte ? Rejoignez le club </h2>
+
+			<fieldset>
+
+				<legend>Infos personnelles</legend>
+
+				<ul>
+				
+					<li>
+
+						<label for="civilite">Civilité : </label>
+						<select id="civilite">
+							<option>Mme</option>
+							<option>M.</option>
+						</select>
+
+					</li>
+
+					<li>
+
+						<label for="prenom">Prénom : </label>
+						<input type="text" name="prenom" id="prenom" onblur="checkPrenom(this)">
+						<span class="champErreur" id="erreurPrenom"></span>
+
+					</li>
+
+					<li>
+
+						<label for="nom">Nom : </label>
+						<input type="text" name="nom" id="nom" onblur="checkNom(this)">
+						<span class="champErreur" id="erreurNom"></span>
+					
+					</li>
+
+					<li>
+						
+						<label for="date">Date de naissance : </label>
+						<input type="date" name="date" id="date" onblur="checkDate(this)">
+						<span class="champErreur" id="erreurDate"></span>
+
+
+					</li>
+
+					<li>
+
+						<label for="adresse">Adresse : </label>
+						<input type="text" name="adresse" id="adresse" onblur="checkAddress(this)">
+						<span class="champErreur" id="erreurAdresse"></span>
+
+
+					</li>
+
+					<li>
+						<label for="codePostal">Code postal : </label>
+						<input type="text" name="codePostal" id="codePostal" onblur="checkPostalCode(this)">
+						<span class="champErreur" id="erreurCodePostal"></span>
+
+					</li>
+
+					<li>
+
+						<label for="ville">Ville : </label>
+						<input type="text" name="ville" id="ville">
+						<span class="champErreur" id="erreurVille"></span>
+
+
+					</li>
+
+
+					<li>
+
+						<label for="phone">Téléphone (sans espaces) : </label>
+						<input type="text" name="phone" id="phone">
+						<span class="champErreur" id="erreurVille"></span>
+
+
+					</li>
+
+
+				</ul>
+
+
+
+			</fieldset>
+
+			<fieldset>
+
+				<legend>Infos de connexion</legend>
+
+					<ul>
+
+						<li>
+							<label for="pseudo">Pseudo : </label>
+							<input type="text" name="pseudo" id="pseudo">
+						</li>
+
+						<li>
+							<label for="password">Mot de passe : </label>
+							<input type="text" name="password" id="password">
+						</li>
+							
+
+					</ul>
+
+
+
+				</fieldset>
+
+				<div class="signinbuttons">
+
+					<input id="buttonsubmit" type="button" value="Envoyer" onclick="checkForm()"></input>
+
+					<input class="buttons" type="reset"></input>
+
+				</div>
+
+
+		</form>
+
+	</main>
+
+
+	<footer>
+		
+
+	</footer>
+
+
+    <script type="text/javascript" src="js/form.js"></script>
+
+</body>

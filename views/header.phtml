@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +32,21 @@
 
 			<a href="?page=news">News</a>
 			<a href="?page=tickets">Billetterie</a>
-			<a href="?page=shop">La Boutique</a>
-			<a href="?page=team">L'effectif</a>
-			<a href="?page=school">L'Ecole de Hockey</a>
+			<a href="?page=shop">Boutique</a>
+			<a href="?page=team">Équipe</a>
+			<a href="?page=school">École de Hockey</a>
 			<a href="?page=contact">Contact</a>
+			<?php
+				if (!isset($_SESSION['id'])) {
+				
+					echo "<a href='?page=login'>Fan Zone</a>";
 
+				} else {
+
+					echo "<p>Connecté</p>";
+
+				}
+			?>
 
 		</nav>
 			

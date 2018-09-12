@@ -17,7 +17,7 @@ body {
 }
 
 h1 , h2 , h3 {
-	font-family: Open Sans, sans-serif;
+
 	text-align: center;
 	color: #CC3333;
 }
@@ -144,23 +144,11 @@ div.flexslider {
 	max-width: 1200px;
 	margin: 0 auto;
 
-
 }
 
 
 .flexslider .caseTitreSlider {
-	color: white;
-	background-color: rgba(0,0,0,0.3);
-	font-family: Open Sans, sans-serif;
-	font-weight: bold;
-	font-size: 4rem;
-	text-shadow: 0px 0px 5px black;
-	text-align: center;
-	position: absolute;
-	width: 100%;
-	height: 25%;
-	margin: 25% auto 0 auto;
-
+	opacity: 0;
 }
 
 .flexslider .caseTitreSlider p {
@@ -296,10 +284,122 @@ hr {
 	opacity: 0.5;
 }
 
+
+/************************PAGE LOGIN************************/
+
+.login , .signin {
+	border: 1px solid rgba(0,0,62,0.1);
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px auto 50px;
+}
+
+.login {
+	width: 500px;
+}
+
+#seconnecter {
+	width: 300px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#seconnecter input {
+	font-size: 1.8rem;
+	border: 1px solid #CC3333;
+	border-radius: 5px;
+	margin: 10px;
+	padding-left: 12px;
+	height: 30px;
+	color: #CC3333;
+}
+
+#seconnecter button , .signinbuttons input {
+	background-color: white;
+	width: 200px;
+	font-size: 2rem;
+	font-weight: bold;
+	border: 2px solid #CC3333;
+	border-radius: 5px;
+	margin: 10px auto 30px;
+	padding: 5px;
+	color: #CC3333;
+}
+
+#seconnecter button:hover , .signinbuttons #buttonsubmit:hover {
+	background-color: #CC3333;
+	color: white;
+}
+
+.signin {
+	width: 700px;
+}
+
+.signin li {
+	list-style: none;
+	margin: 5px 0;
+}
+
+
+.signin fieldset {
+	font-size: 2rem;
+	color: #CC3333;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.signin legend {
+	padding: 5px;
+}
+
+
+.signin label {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.8rem;
+	width: 200px;
+	display: block;
+	float: left;
+}
+
+.signin input {
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding-left: 12px;
+}
+
+.signinbuttons {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
 	/******************* TABLETTE ********************************/
 
 	@media screen and (min-width: 768px) {
 
+/* 	POUR FAIRE APPARAÎTRE LES TITRES SLIDER
+ */
+	.flexslider .caseTitreSlider {
+		transition: opacity 0.3s linear;
+		color: white;
+		background-color: rgba(0,0,0,0.3);
+		font-family: Open Sans, sans-serif;
+		font-weight: bold;
+		font-size: 4rem;
+		text-shadow: 0px 0px 5px black;
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		height: 25%;
+		margin: 160px auto 0 auto;
+
+	}
+
+	.flexslider:hover .caseTitreSlider {
+		opacity: 1;	
+	}
 
 
 	/*********** PAGE NEWS ****************/
