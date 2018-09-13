@@ -5,9 +5,9 @@
 
 if (!isset($_SESSION['id'])) {
 
-	include '/views/loginView.phtml';
+	include './views/loginView.phtml';
 
 	} else {
 
-		include '/views/profile.phtml';
+		include './views/profile.phtml';
 	}

@@ -7,7 +7,7 @@ class dataBase {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$db = new PDO('mysql:host=loupsdesgh798.mysql.db;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$db->exec('SET NAMES UTF8');
 
 	}
@@ -16,7 +16,7 @@ class dataBase {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$db->exec('SET NAMES UTF8');
 
 		$sql = "SELECT * FROM players";
@@ -37,7 +37,7 @@ class dataBase {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		$db->exec('SET NAMES UTF8');
 
 		$sql = "SELECT * FROM players WHERE `id` = '$playerId'";
@@ -56,7 +56,7 @@ class dataBase {
 
 		$user = 'root';
 		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=sakami' , $user , $pass);
+		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass);
 		$db->exec('SET NAMES UTF8');
 
 		$sql = "SELECT * FROM articles ORDER BY `created_at` DESC";
