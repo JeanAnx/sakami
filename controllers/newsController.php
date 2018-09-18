@@ -2,7 +2,6 @@
 
 include 'bootstrap.php';
 
-$dataBase = new dataBase();
-$articles = $dataBase->getArticles();
+$articles = getArticles();
 
 include 'views/newsView.phtml';

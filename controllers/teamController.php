@@ -2,8 +2,7 @@
 
 include 'bootstrap.php';
 
-$database = new database();
-$players = $database->getPlayers();
+$players = getPlayers();
 
 include 'views/teamView.phtml';
 

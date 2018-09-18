@@ -1,5 +1,4 @@
 
-
 	<main class="container">
 	
 		<div class="flexslider">
@@ -25,6 +24,47 @@
 
 
 
+		<section class="headNews">
+
+			<h1>À la une</h1>
+
+			<article id="lastNews">
+
+				<div class="divRight">
+					<a href="?page=article&id=<?=$headNews['id']?>">
+					<h2><?= $headNews['title'] ?></h2>
+					<p><?= $headNews['subtitle'] ?></p>
+				</div>
+
+				<img src="<?= $headNews['picture'] ?>">
+					
+					</a>
+
+				<div class="clearBoth"></div>
+				<a class="toNews" href="?page=news"><i class="fas fa-newspaper"></i>  Voir toutes les news</a>
+
+			</article>
+
+			<article >
+				
+				<h1>Prochain match</h1>
+
+				<a href="?page=tickets" id="nextGame">
+					
+					<img id="logo1NextGame" src="./images/V4.svg">
+					<p>vs</p>
+					<i id="logo2NextGame" class=" fab fa-pied-piper-alt"></i>
+					</a>
+
+
+
+
+			</article>
+
+
+		</section>
+
+
 	</main>
 	
 		<script>
@@ -34,3 +74,4 @@
 		</script>
 
 </body>
+

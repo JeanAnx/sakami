@@ -17,7 +17,7 @@
 	
 		
 		
-		<form class="signin" action="submit.php" method="post" onsubmit="return checkForm()">
+		<form class="signin" action="?page=signin" method="post" onsubmit="return checkForm()">
 
 			<h2>Pas encore de compte ? Rejoignez le club </h2>
 
@@ -29,34 +29,32 @@
 				
 					<li>
 
-						<label for="civilite">Civilité : </label>
-						<select id="civilite">
-							<option>Mme</option>
-							<option>M.</option>
-						</select>
-
-					</li>
-
-					<li>
-
-						<label for="prenom">Prénom : </label>
-						<input type="text" name="prenom" id="prenom" onblur="checkPrenom(this)">
+						<label for="firstname">Prénom : </label>
+						<input type="text" name="firstname" id="firstname" onblur="checkPrenom(this)">
 						<span class="champErreur" id="erreurPrenom"></span>
 
 					</li>
 
 					<li>
 
-						<label for="nom">Nom : </label>
-						<input type="text" name="nom" id="nom" onblur="checkNom(this)">
+						<label for="lastname">Nom : </label>
+						<input type="text" name="lastname" id="lastname" onblur="checkNom(this)">
 						<span class="champErreur" id="erreurNom"></span>
 					
 					</li>
 
 					<li>
+
+						<label for="email">Email : </label>
+						<input type="text" name="email" id="email" onblur="checkPrenom(this)">
+						<span class="champErreur" id="erreurEmail"></span>
+
+					</li>
+
+					<li>
 						
-						<label for="date">Date de naissance : </label>
-						<input type="date" name="date" id="date" onblur="checkDate(this)">
+						<label for="birthdate">Date de naissance : </label>
+						<input type="Date" name="birthdate" id="birthdate" onblur="checkDate(this)">
 						<span class="champErreur" id="erreurDate"></span>
 
 
@@ -64,24 +62,24 @@
 
 					<li>
 
-						<label for="adresse">Adresse : </label>
-						<input type="text" name="adresse" id="adresse" onblur="checkAddress(this)">
+						<label for="address">Adresse : </label>
+						<input type="text" name="address" id="address" onblur="checkAddress(this)">
 						<span class="champErreur" id="erreurAdresse"></span>
 
 
 					</li>
 
 					<li>
-						<label for="codePostal">Code postal : </label>
-						<input type="text" name="codePostal" id="codePostal" onblur="checkPostalCode(this)">
+						<label for="zipCode">Code postal : </label>
+						<input type="text" name="zipCode" id="zipCode" onblur="checkPostalCode(this)">
 						<span class="champErreur" id="erreurCodePostal"></span>
 
 					</li>
 
 					<li>
 
-						<label for="ville">Ville : </label>
-						<input type="text" name="ville" id="ville">
+						<label for="city">Ville : </label>
+						<input type="text" name="city" id="city">
 						<span class="champErreur" id="erreurVille"></span>
 
 
@@ -117,7 +115,7 @@
 
 						<li>
 							<label for="password">Mot de passe : </label>
-							<input type="text" name="password" id="password">
+							<input type="password" name="password" id="password">
 						</li>
 							
 
@@ -129,7 +127,7 @@
 
 				<div class="signinbuttons">
 
-					<input id="buttonsubmit" type="button" value="Envoyer" onclick="checkForm()"></input>
+					<input id="buttonsubmit" type="submit" value="Envoyer" onclick="checkForm()"></input>
 
 					<input class="buttons" type="reset"></input>
 

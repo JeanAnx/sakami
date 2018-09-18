@@ -1,77 +1,109 @@
 <?php
 
-class dataBase {
+function openDatabase() {
 
+	$user = 'root';
+	$pass = 'm12gi8gefxJWJRGs';
+	$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$db->exec('SET NAMES UTF8');
 
-	private function openDatabase() {
+	return $db;
 
-		$user = 'root';
-		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=loupsdesgh798.mysql.db;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$db->exec('SET NAMES UTF8');
+}
 
+function getPlayers() {
+
+	$db = openDatabase(); 
+
+	$sql = "SELECT * FROM players";
+
+	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+
+	$players = [];
+
+	foreach ($statement as $row) {
+		$players[] = $row;
 	}
 
-	public function getPlayers() {
+	return $players;
 
-		$user = 'root';
-		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$db->exec('SET NAMES UTF8');
+}
 
-		$sql = "SELECT * FROM players";
+function getPlayerById($playerId) {
 
-		$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+	$db = openDatabase(); 
 
-		$players = [];
+	$sql = "SELECT * FROM players WHERE `id` = '$playerId'";
 
-		foreach ($statement as $row) {
-			$players[] = $row;
-		}
+	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
 
-		return $players;
-
+	foreach ($statement as $row) {
+		$thePlayer = $row;
 	}
 
-	public function getPlayerById($playerId) {
+	return $thePlayer;
 
-		$user = 'root';
-		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		$db->exec('SET NAMES UTF8');
+}
 
-		$sql = "SELECT * FROM players WHERE `id` = '$playerId'";
+function getArticles() {
 
-		$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+	$db = openDatabase(); 
 
-		foreach ($statement as $row) {
-			$thePlayer = $row;
-		}
+	$sql = "SELECT * FROM articles ORDER BY `created_at` DESC";
 
-		return $thePlayer;
+	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
 
+	$articles = [];
+
+	foreach ($statement as $row) {
+		$articles[] = $row;
 	}
 
-	public function getArticles() {
+	return $articles;
 
-		$user = 'root';
-		$pass = 'm12gi8gefxJWJRGs';
-		$db = new PDO('mysql:host=localhost;dbname=loupsdesgh798' , $user , $pass);
-		$db->exec('SET NAMES UTF8');
+}
 
-		$sql = "SELECT * FROM articles ORDER BY `created_at` DESC";
+function getLatestArticle() {
 
-		$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+	$db = openDatabase(); 
 
-		$articles = [];
+	$sql = "SELECT * FROM articles ORDER BY `created_at` DESC limit 1";
 
-		foreach ($statement as $row) {
-			$articles[] = $row;
-		}
+	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
 
-		return $articles;
+	$article = '';
 
-
+	foreach ($statement as $row) {
+		$article = $row;
 	}
+
+	return $article;
+
+}
+
+function createUser(array $newUser) {
+
+	$db = openDatabase(); 
+
+	$newUserData = [
+
+		'firstname' => $newUser['firstname'],
+		'lastname' => $newUser['lastname'],
+		'birthdate' => $newUser['birthdate'],
+		'address' => $newUser['address'],
+		'zipcode' => $newUser['zipCode'],
+		'city' => $newUser['city'],
+		'phone' => $newUser['phone'],
+		'email' => $newUser['email'],
+		'pseudo' => $newUser['pseudo'],
+		'password' => password_hash($newUser['password'],PASSWORD_BCRYPT),
+	];
+
+
+	$sql = "INSERT INTO `fans` (firstname,lastname,birthdate,address,zipcode,city,phone,email,pseudo,password,created_at)
+	VALUES (:firstname,:lastname,:birthdate,:address,:zipcode,:city,:phone,:email,:pseudo,:password,NOW())";
+
+	$statement = $db->prepare($sql);
+	$statement->execute($newUserData);
 
 }
