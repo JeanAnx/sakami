@@ -1,5 +1,6 @@
 <?php
 
+
 function openDatabase() {
 
 	$user = 'root';
@@ -17,7 +18,7 @@ function getPlayers() {
 
 	$sql = "SELECT * FROM players";
 
-	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+	$statement = $db->query($sql,\PDO::FETCH_ASSOC);
 
 	$players = [];
 
@@ -106,4 +107,21 @@ function createUser(array $newUser) {
 	$statement = $db->prepare($sql);
 	$statement->execute($newUserData);
 
+}
+
+function getUserByEmail($email) {
+
+	$db = openDatabase(); 
+
+	$sql = "SELECT * FROM `fans` WHERE email LIKE '$email'";
+
+	$statement = $db->query($sql, \PDO::FETCH_ASSOC);
+
+	$user = [];
+
+	foreach ($statement as $row) {
+			$user = $row;
+		}
+
+	return $user;
 }

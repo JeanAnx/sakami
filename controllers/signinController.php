@@ -2,6 +2,8 @@
 
 include './models/databaseModel.php';
 
+$newUserSafe = [];
+
 $newUser = [
 
 	'firstname' => $_POST['firstname'],
@@ -16,7 +18,9 @@ $newUser = [
 	'password' => $_POST['password'],
 ];
 
+
 var_dump($newUser);
+var_dump($newUserSafe);
 
 createUser($newUser);
 
