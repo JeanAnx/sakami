@@ -7,9 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
 	
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="flexslider/flexslider.css" type="text/css">
 	<script src="flexslider/jquery.flexslider.js"></script>
 
@@ -37,17 +37,8 @@
 			<a href="?page=team">Équipe</a>
 			<a href="?page=school">École de Hockey</a>
 			<a href="?page=contact">Contact</a>
-			<?php
-				if (!isset($_SESSION['id'])) {
-				
-					echo "<a href='?page=fanzone'>Fan Zone</a>";
+			<a href='?page=fanzone'>Fan Zone</a>"
 
-				} else {
-
-					echo "<p>Connecté</p>";
-
-				}
-			?>
 
 		</nav>
 

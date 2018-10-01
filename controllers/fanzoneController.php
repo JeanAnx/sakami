@@ -8,8 +8,9 @@ if (!isset($_SESSION['id'])) {
 
 	} else {
 
-		include 'views/profile.phtml';
+		include 'views/profileView.phtml';
 	}
+
 
 
 

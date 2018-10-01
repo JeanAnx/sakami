@@ -15,11 +15,11 @@ if (!empty($theFan)) {
 	  Vous êtes bien connecté(e) !
 	</div>';
 
-} else {
+	} else {
 
-	echo '<div class="alert alert-danger" role="alert">
-  La connexion a échoué !
-</div>';
-}
+		echo '<div class="alert alert-danger" role="alert">
+	  La connexion a échoué !
+	</div>';
+	}
 
 
